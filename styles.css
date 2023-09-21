@@ -1,0 +1,103 @@
+
+.menu{
+    position: fixed;
+    z-index: 5;
+    /* transform: translateY(-100%);
+    transition: transform 0.4s;  */
+    display: none;
+    list-style: none;    
+    background-color: gainsboro;
+    
+}
+
+    #nav-icon {
+        width: 40px;
+        height: 45px;
+        position: relative;
+        margin: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #nav-icon span {
+        display: inline-block;
+        position: absolute;
+        height: 9px;
+        width: 100%;
+        background: #d3531a;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+    }
+
+    #nav-icon span:nth-child(1) {
+        top: 0px;
+    }
+    
+    #nav-icon span:nth-child(2), #nav-icon span:nth-child(3) {
+        top: 18px;
+    }
+    
+    #nav-icon span:nth-child(4) {
+        top: 36px;
+    }
+    
+    #nav-icon.open span:nth-child(1) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+    
+    #nav-icon.open span:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    
+    #nav-icon.open span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    
+    #nav-icon.open span:nth-child(4) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+
+/* .showMenu{
+    transform: translateY(0);
+} */
+
+/* .isOpen{
+    transform: translate3d(260px, 0, 0);
+} */
+
+#quote-carousel{
+    padding: 48px 80px;
+    border-radius: 12px;
+}
+
+footer{
+    text-align: center;
+    padding: 32px 64px;
+    background-color: azure;
+}
