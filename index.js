@@ -1,11 +1,26 @@
 $(function() {
+    
+    // Navbar shrinking effect on scrolling the page below 
 
+    let $prevScroll = $("html").scrollTop();    // Previous scroll position of the page
+    $(window).scroll(function() {
+        let $top = $("body").scrollTop(), $currScroll = $("html").scrollTop();
+        if($top > 20 || ($currScroll - $prevScroll) > 10){
+            $("header").css("padding", "16px 36px");
+        }
+        else if(($prevScroll - $currScroll) > 10){
+            $("header").css("padding", "32px 72px");
+        }
+        $prevScroll = $currScroll;
+    })
+
+    // Toggling the hamburger to close icon and vice versa on clicking the header menu
     $("#nav-icon").on("click", () => {
-        $(".menu").slideToggle();
         $("#nav-icon").toggleClass("open");
     })
 
 
+    // Fetching the quotes through API on submit request of the form and displaying quotes on the carousel
     $("#fetch-quote").on("submit", async (e) => {
         e.preventDefault();
         let category = $("#categories").val(), count = Number($("#count").val());
@@ -60,6 +75,7 @@ $(function() {
             
     })
 
+    // Making carousel indicators work correctly on carousel slide
     $('#quote-carousel').on('slid.bs.carousel', function () {
         $holder = $('.carousel-indicators button.active');
         $holder.removeAttr('class');
@@ -72,4 +88,26 @@ $(function() {
         $(this).attr('class', 'active');
     });
 
+
+    // Behavior for smaller viewport sizes
+
+    if($(window).width() <= 768){
+        $(document).click(function() {
+            if($("#nav-icon").attr("aria-expanded") === "false")
+                $("#nav-icon").removeClass("open");
+        })
+    }
+
+    $(window).resize(function() {
+        if($(window).width() <= 768){
+            $(document).click(function() {
+                if($("#nav-icon").attr("aria-expanded") === "false")
+                    $("#nav-icon").removeClass("open");
+            })
+        }
+       
+    })   
+    
 })
+
+

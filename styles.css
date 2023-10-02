@@ -1,17 +1,30 @@
 
-.menu{
+header{
+    background: linear-gradient(to right, #865DFF, #E384FF, #FBDCFA);
+    padding: 24px 72px;
     position: fixed;
-    z-index: 5;
-    /* transform: translateY(-100%);
-    transition: transform 0.4s;  */
-    display: none;
-    list-style: none;    
-    background-color: gainsboro;
-    
+    width: 100%;
+    top: 0;
+    z-index: 10;
+
+    transition: 0.4s;
+}
+
+.heading-wrap{
+    margin-left: calc(24px + 12vw);
+}
+
+.heading{
+    color: #3B064D;
+    font-size: calc(16px + 2vw);
+}
+
+.heading:hover{
+    text-shadow: 1px 1px 1px #3B064D, 0 0 18px #ffff25;
 }
 
     #nav-icon {
-        width: 40px;
+        width: calc(32px + 2vw);
         height: 45px;
         position: relative;
         margin: 0;
@@ -29,9 +42,9 @@
     #nav-icon span {
         display: inline-block;
         position: absolute;
-        height: 9px;
+        height: 7px;
         width: 100%;
-        background: #d3531a;
+        background: #8105D8;
         border-radius: 9px;
         opacity: 1;
         left: 0;
@@ -83,6 +96,22 @@
         left: 50%;
     }
 
+.menu-item{
+    font-size: calc(12px + 0.4vw) !important;
+    color: #8105d8 !important;
+    margin: 0 calc(0.1vw);
+}
+
+.menu-item:hover{
+    background-color: #fff0ff;
+}
+
+.logo{
+    width: calc(64px + 0.5vw);
+    height: 64px;
+    position: relative;
+    left: 1rem;
+}
 /* .showMenu{
     transform: translateY(0);
 } */
@@ -90,6 +119,20 @@
 /* .isOpen{
     transform: translate3d(260px, 0, 0);
 } */
+
+
+
+/* #nav-icon{
+    display: none;
+} */
+
+ul.navbar-nav{
+    display: none;
+}
+
+.feed-inspire{
+    margin-top: 128px;
+}
 
 #quote-carousel{
     padding: 48px 80px;
@@ -100,4 +143,34 @@ footer{
     text-align: center;
     padding: 32px 64px;
     background-color: azure;
+}
+
+/* Media Query for smaller viewports */
+
+@media screen and (max-width: 768px) {
+    /* #nav-icon{
+        display: block;
+    } */
+
+    ul.nav{
+        display: none;
+    }
+
+    ul.navbar-nav{
+        display: block;
+    }
+
+    .heading-wrap{
+        margin-left: 0;
+    }
+
+    .logo{
+        width: calc(48px + 0.5vw);
+        height: 48px;
+    }
+
+    /* .heading{
+     
+    } */
+    
 }

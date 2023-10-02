@@ -22,39 +22,87 @@
 </head>
 
 <body>
-    <header class="px-5 bg-body-tertiary">
-            <div class="d-flex justify-content-between">  
-                <div> <a class="logo" href="#">Logo</a> </div>
+    <header class="px-4 shadow">
+            <div class="d-flex justify-content-between align-items-center">  
+                <div> <a href="#"><img src="images/Logo.png" alt="Logo..." class="logo"></a> </div>
+                <div class="heading-wrap"> <a href="#" class="text-decoration-none"><h1 class="heading">ThoughtFUL.</h1></a> </div>
+                <div class="nav-encloser">
+                    <!-- <div id="nav-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link menu-item" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-item" href="#browse-quotes">Browse Quotes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-item" href="#contact">Contact</a>
+                        </li>
+                    </ul> -->
+                    
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link menu-item" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-item" href="#browse-quotes">Browse Quotes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-item" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a id="nav-icon" class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Home</a></li>
+                                <li><a class="dropdown-item" href="#browse-quotes">Browse Quotes</a></li>
+                                <li><a class="dropdown-item" href="#contact">Contact</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- <div class="d-flex justify-content-between navbar navbar-expand-md" role="navigation">  
+                <div> <a class="navbar-brand logo" href="#">Logo</a> </div>
                 <div> <h1> ThoughtFUL.</h1> </div>
-                <div>
-                    <!-- <button class="hamburger">
-                        <i class="menuIcon fa-solid fa-bars"></i>
-                        <i class="closeIcon fa-solid fa-xmark"></i>
-                    </button> -->
+                <div class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapse-menu">
                     <div id="nav-icon">
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
-                    <ul class="menu">
-                        <li>
-                            <a class="menu-item" href="#">Active</a>
+                </div>
+                <div class="collapse navbar-collapse" id="collapse-menu">
+                    <ul class="ms-auto nav navbar-nav">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link menu-item" href="#">Home</a>
                         </li>
-                        <li>
-                            <a class="menu-item" href="#">Link</a>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link menu-item" href="#browse-quotes">Browse Quotes</a>
                         </li>
-                        <li>
-                            <a class="menu-item" href="#">Link</a>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link menu-item" href="#contact">Contact</a>
                         </li>
-                        
                     </ul>
                 </div>
-            </div>
+            </div> -->
+
     </header>
 
 
-    <div class="container text-center">
+    <div class="container text-center feed-inspire">
         <div class="row">
           <div class="col-sm-12 col-md-8">
             <p>Raise up the spirit of life, enriching your mind with motivational thoughts everyday</p>
@@ -65,7 +113,7 @@
         </div>
     </div>
 
-    <div class="container text-center">
+    <div class="container text-center feed-meditate">
         <div class="row">
           <div class="col-sm-12 col-md-4">
             <img src="https://cdn.dribbble.com/users/935078/screenshots/6748415/payrue_master_2.gif" alt="yoga gif" width="200px" height="200px">
@@ -76,7 +124,7 @@
         </div>
     </div>
     
-    <div>
+    <section id="browse-quotes">
         <h2 class="h2">Select amongst the variety of categories available along with retrieving multiple inspiring quotes at the same time</h2>
         <form id="fetch-quote">
             <div class="input-group">
@@ -91,13 +139,9 @@
                 <button class="btn btn-outline-secondary" type="submit">Show Quotes</button>
             </div>       
         </form>
-    </div>
+    </section>
 
-        <!-- <div class="quote-encloer">
-            <p class="quote"></p>
-            <p class="author"></p>
-        </div> -->
-    <div class="carousel-encloser">
+    <section id="quotes-encloser">
         <div id="quote-carousel" class="carousel carousel-dark slide w-75 mx-auto bg-body-secondary" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#quote-carousel" data-bs-slide-to="0" class="active"></button>
@@ -144,15 +188,15 @@
               <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </div>
+    </section>
 
-    <div class="text-center">
+    <section id="contact" class="text-center">
         <h2>Get in Touch</h2>
         <p>Having some noble thoughts for the way of life and optimism to dwell upon or got any worthy ideas to share ? Let's connect.</p>
         <a class="link-secondary mx-2 fs-5" href="#"><i class="fa-brands fa-facebook" id="facebook"></i></a>
         <a class="link-secondary mx-2 fs-5" href="#"><i class="fa-brands fa-instagram" id="instagram"></i></a>
         <a class="link-secondary mx-2 fs-5" href="#"><i class="fa-regular fa-envelope" id="mail"></i></a>
-    </div>    
+    </section>    
 
     <footer>
         <h5 class="h5">Made with ❤ by Nishith Gohel</h5>
