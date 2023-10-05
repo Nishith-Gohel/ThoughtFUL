@@ -16,7 +16,9 @@ header{
 
 .heading{
     color: #3B064D;
+    font-family: 'Ubuntu', sans-serif;
     font-size: calc(16px + 2vw);
+    font-weight: 700;
 }
 
 .heading:hover{
@@ -24,7 +26,7 @@ header{
 }
 
     #nav-icon {
-        width: calc(32px + 2vw);
+        width: calc(32px + 1.5vw);
         height: 45px;
         position: relative;
         margin: 0;
@@ -132,6 +134,67 @@ ul.navbar-nav{
 
 .feed-inspire{
     margin-top: 128px;
+    padding: 32px 96px;
+}
+
+.feed-meditate{
+    position: relative;
+    padding: 64px 96px;
+    background-color: #f9f9f9;
+}
+
+.custom-shape-divider-top-1696512224 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1696512224 svg {
+    position: relative;
+    display: block;
+    width: calc(140% + 1.3px);
+    height: 112px;
+}
+
+.custom-shape-divider-top-1696512224 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.custom-shape-divider-bottom-1696529136 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1696529136 svg {
+    position: relative;
+    display: block;
+    width: calc(164% + 1.3px);
+    height: 96px;
+}
+
+.custom-shape-divider-bottom-1696529136 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.feed-content{
+    margin-bottom: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: calc(1.3rem + .6vw);
+    font-weight: 600;
+    line-height: calc(3rem + 1vw);
+}
+
+.feed-img{
+    width: calc(216px + 5vw);
+    height: calc(216px + 5vw);
 }
 
 #quote-carousel{
@@ -164,13 +227,44 @@ footer{
         margin-left: 0;
     }
 
+    .heading{
+        font-size: calc(16px + 2.7vw);
+        margin-bottom: 0;
+    }
+
     .logo{
         width: calc(48px + 0.5vw);
         height: 48px;
+        left: 0;
     }
 
-    /* .heading{
-     
-    } */
+    .custom-shape-divider-top-1696511936 svg {
+        width: calc(140% + 1.3px);
+        height: 50px;
+    }
+
+    .custom-shape-divider-bottom-1696512634 svg {
+        width: calc(135% + 1.3px);
+        height: 35px;
+    }
+
+    .feed-inspire{
+        text-align: center;
+        margin-top: 80px;
+        padding: 16px 96px;
+    }
+
+    .feed-inspire p.feed-content{
+        margin-top: 1.5rem;
+    }
+
+    .feed-meditate{
+        text-align: center;
+    }
+
+    .feed-content{
+        font-size: calc(1rem + 1.2vw);
+        line-height: calc(2rem + 1vw);
+    }
     
 }

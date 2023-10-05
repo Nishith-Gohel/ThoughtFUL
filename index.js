@@ -5,11 +5,11 @@ $(function() {
     let $prevScroll = $("html").scrollTop();    // Previous scroll position of the page
     $(window).scroll(function() {
         let $top = $("body").scrollTop(), $currScroll = $("html").scrollTop();
-        if($top > 20 || ($currScroll - $prevScroll) > 10){
-            $("header").css("padding", "16px 36px");
+        if($top > 20 || ($currScroll - $prevScroll) > 12){
+            $("header").css("padding", "16px 32px");
         }
-        else if(($prevScroll - $currScroll) > 10){
-            $("header").css("padding", "32px 72px");
+        else if(($prevScroll - $currScroll) > 12){
+            $("header").css("padding", "32px 64px");
         }
         $prevScroll = $currScroll;
     })
