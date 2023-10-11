@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+}
 
 header{
     background: linear-gradient(to right, #865DFF, #E384FF, #FBDCFA);
@@ -10,18 +14,18 @@ header{
     transition: 0.4s;
 }
 
-.heading-wrap{
+.brand-heading-wrap{
     margin-left: calc(24px + 12vw);
 }
 
-.heading{
+.brand-heading{
     color: #3B064D;
     font-family: 'Ubuntu', sans-serif;
     font-size: calc(16px + 2vw);
     font-weight: 700;
 }
 
-.heading:hover{
+.brand-heading:hover{
     text-shadow: 1px 1px 1px #3B064D, 0 0 18px #ffff25;
 }
 
@@ -187,9 +191,10 @@ ul.navbar-nav{
 .feed-content{
     margin-bottom: 0;
     font-family: 'Open Sans', sans-serif;
-    font-size: calc(1.3rem + .6vw);
+    font-size: calc(1.2rem + 0.5vw);
     font-weight: 600;
-    line-height: calc(3rem + 1vw);
+    line-height: calc(2.5rem + 0.5vw);
+    text-align: center;
 }
 
 .feed-img{
@@ -197,16 +202,80 @@ ul.navbar-nav{
     height: calc(216px + 5vw);
 }
 
+#browse-quotes{
+    width: 75%;
+    margin: 96px auto 64px;
+    text-align: center;
+}
+
+.browse-quotes-heading{
+    font-family: 'Open Sans', sans-serif;
+    font-size: calc(1.4rem + 0.5vw);
+    font-weight: 600;
+    line-height: calc(2.5rem + 0.875vw);
+    margin-bottom: 36px;
+}
+
+div.input-group input#count{
+    border: 1.5px solid #6c757d;
+    margin-left: 0;
+}
+
+#categories option:hover{
+    background-image: linear-gradient(#6c757d);
+}
+
+
 #quote-carousel{
-    padding: 48px 80px;
     border-radius: 12px;
+    margin-bottom: 40px;
+    padding: 48px 80px;
+}
+
+.carousel-item figure{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.quote{
+    font-family: 'Average Sans', sans-serif;
+    font-size: calc(1rem + 0.5vw);
+    line-height: calc(1.8rem + 0.5vw);
+}
+
+.author{
+    font-weight: 500;
+}
+
+#contact{
+    width: 75%;
+    margin: 0 auto;
+}
+
+.contact-heading{
+    font-family: 'Dela Gothic One', cursive;
+    font-size: calc(1.5rem + 0.5vw);
+}
+
+#contact p{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: calc(12px + 0.4vw);
 }
 
 footer{
     text-align: center;
-    padding: 32px 64px;
-    background-color: azure;
+    padding: 32px 40px;
+    background-color: #eeffff;
 }
+
+.footer-text{
+    font-size: calc(1rem + 0.5vw);
+}
+
+.copyright{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
 
 /* Media Query for smaller viewports */
 
@@ -223,11 +292,15 @@ footer{
         display: block;
     }
 
-    .heading-wrap{
+    a.dropdown-item:active{
+        background-color: #4baaff;
+    }
+
+    .brand-heading-wrap{
         margin-left: 0;
     }
 
-    .heading{
+    .brand-heading{
         font-size: calc(16px + 2.7vw);
         margin-bottom: 0;
     }
@@ -249,9 +322,9 @@ footer{
     }
 
     .feed-inspire{
-        text-align: center;
         margin-top: 80px;
         padding: 16px 96px;
+        text-align: center;
     }
 
     .feed-inspire p.feed-content{
@@ -263,8 +336,32 @@ footer{
     }
 
     .feed-content{
-        font-size: calc(1rem + 1.2vw);
-        line-height: calc(2rem + 1vw);
+        font-size: calc(1rem + 0.7vw);
+        line-height: calc(2rem + 0.5vw);
+    }
+
+    #browse-quotes{
+        margin: 72px auto 48px;
+    }
+
+    .browse-quotes-heading{
+        font-size: calc(1.2rem + 0.5vw);
+        line-height: calc(2.5rem + 1vw);
+        margin-bottom: 24px;
+    }
+
+    #quote-carousel{
+        margin-bottom: 32px;
+    }
+
+    .carousel-item figure{
+        width: 100%;
+        margin: 0;
+    }
+
+    .quote{
+        font-size: calc(1rem + 1vw);
+        line-height: calc(1.5rem + 1vw);
     }
     
 }

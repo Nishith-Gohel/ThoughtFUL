@@ -42,7 +42,18 @@ $(function() {
         
         let items = "";
         for(let i = 0; i < count; i++){
-            items += "<div class='carousel-item'>" + "<img src='images/free soul.png' class='d-block w-100' height='500px'>" +  "</div>";;
+            items += "<div class='carousel-item'>" + 
+                "<figure class='text-center'>" + 
+                    "<blockquote class='blockquote'>" + 
+                        "<i class='fa-solid fa-quote-left'></i> " + 
+                        "<span class='quote'>" + data[i].quote + "</span>" + 
+                        " <i class='fa-solid fa-quote-right'></i>" + 
+                    "</blockquote>" + 
+                    "<p class='blockquote-footer'>" + 
+                        "<cite title='author Source Title'>" + data[i].author +"</cite>" +
+                    "</p>" + 
+                "</figure>" +
+                "</div>";
         }
         
 
@@ -63,7 +74,12 @@ $(function() {
                      + "<span class='carousel-control-next-icon' aria-hidden='true'></span>"
                       + "</button>"
         
-        $("#quote-carousel").append(carousel_indicators, carousel_inner, prev, next);
+        let quotes = "<div id='quote-carousel' class='carousel carousel-dark slide w-75 mx-auto bg-body-secondary' data-bs-ride='carousel'>" + 
+                                    carousel_indicators + carousel_inner + prev + next +
+                              "</div>"
+        
+        $("#quotes-encloser").html("");
+        $("#quotes-encloser").append(quotes);
 
 
         $(".carousel-inner .carousel-item").eq(0).addClass("active");
