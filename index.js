@@ -31,10 +31,11 @@ $(function() {
             method : 'GET',
             headers: {
                 'X-Api-Key' : 'QLA862ug3/V6aoyP18D8vg==5wee8t4ErVF8hYYq'
-            }
+            },
+            mode: 'cors'
         });
         let data = await response.json();
-        console.log(data);
+        // console.log(data);
 
         // $(".quote").text(data[0].quote);
         // $(".author").text(data[0].author);
@@ -74,20 +75,30 @@ $(function() {
                      + "<span class='carousel-control-next-icon' aria-hidden='true'></span>"
                       + "</button>"
         
-        let quotes = "<div id='quote-carousel' class='carousel carousel-dark slide w-75 mx-auto bg-body-secondary' data-bs-ride='carousel'>" + 
-                                    carousel_indicators + carousel_inner + prev + next +
-                              "</div>"
+        let quotes;
+        if(count === 1){
+            quotes = "<div id='quote-carousel' class='carousel carousel-dark slide w-75 mx-auto bg-body-secondary' data-bs-ride='carousel'>" + 
+                        carousel_inner + 
+                    "</div>"
+        } else if(count > 1){
+            quotes = "<div id='quote-carousel' class='carousel carousel-dark slide w-75 mx-auto bg-body-secondary' data-bs-ride='carousel'>" + 
+                                        carousel_indicators + carousel_inner + prev + next +
+                                "</div>"
+        }
         
         $("#quotes-encloser").html("");
         $("#quotes-encloser").append(quotes);
 
 
         $(".carousel-inner .carousel-item").eq(0).addClass("active");
-        for(let i = 0; i < count; i++){
-            $(".carousel-indicators button").eq(i).attr("data-bs-slide-to", `${i}`);
+
+        if(count > 1){
+            for(let i = 0; i < count; i++){
+                $(".carousel-indicators button").eq(i).attr("data-bs-slide-to", `${i}`);
+            }
+            // $(".carousel-indicators button").eq(0).addClass("active").attr("aria-current", "true");
+            $(".carousel-indicators button").eq(0).attr("class", "active");
         }
-        // $(".carousel-indicators button").eq(0).addClass("active").attr("aria-current", "true");
-        $(".carousel-indicators button").eq(0).attr("class", "active");
             
     })
 
