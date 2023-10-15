@@ -24,13 +24,14 @@ $(function() {
     $("#fetch-quote").on("submit", async (e) => {
         e.preventDefault();
         let category = $("#categories").val(), count = Number($("#count").val());
-        let url = `https://api.api-ninjas.com/v1/quotes?category=${category}&limit=${count}`, key = config.API_KEY;
+        let url = `https://api.api-ninjas.com/v1/quotes?category=${category}&limit=${count}`, key = secret.API_KEY;
         // console.log(category, count);
 
         let response = await fetch(url, {
             method : 'GET',
             headers: {
                 'X-Api-Key' : key
+
             },
             mode: 'cors'
         });
