@@ -21,12 +21,12 @@ HTML, CSS, VanillaJS, jQuery, Bootstrap
 
 ### Usage
 
-* Clone the [repo](https://github.com/Nishith-Gohel/ThoughtFUL) hosted on github and run the command `git clone https://github.com/Nishith-Gohel/ThoughtFUL.git` in your local directory you want this project to be created.
+* Clone this [repo](https://github.com/Nishith-Gohel/ThoughtFUL) hosted on github and run the command `git clone https://github.com/Nishith-Gohel/ThoughtFUL.git` from git bash in your local directory you want this project to be created.
 
 * Include your API key, generated for your account from [API-Ninjas](https://api-ninjas.com/) to include it in the header for
-making request to the API endpoint.
+making request to the API endpoint inside index.js file.
 
-* Run your application hosted on a localhost or using a live server extension.
+* Run your application hosted on a localhost or using a live server extension in your preferred editor.
 
 * Wooah ! Your application is up and running on your local machine.
 
