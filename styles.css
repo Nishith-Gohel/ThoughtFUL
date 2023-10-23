@@ -360,8 +360,8 @@ footer{
     }
 
     .quote{
-        font-size: calc(1rem + 1vw);
-        line-height: calc(1.5rem + 1vw);
+        font-size: calc(0.75rem + 1.25vw);
+        line-height: calc(0.5rem + 1vw);
     }
     
 }
