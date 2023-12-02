@@ -24,22 +24,21 @@ $(function() {
     $("#fetch-quote").on("submit", async (e) => {
         e.preventDefault();
         let category = $("#categories").val(), count = Number($("#count").val());
-        let url = `https://api.api-ninjas.com/v1/quotes?category=${category}&limit=${count}`, key = secret.API_KEY;
+        // let url = `https://api.api-ninjas.com/v1/quotes?category=${category}&limit=${count}`, key = secret.API_KEY;
+        let url;
+        if(category === "random")
+            url = `https://api.quotable.io/quotes/random?limit=${count}`;
+        else    
+            url = `https://api.quotable.io/quotes/random?limit=${count}&tags=${category}`;
         // console.log(category, count);
 
         let response = await fetch(url, {
             method : 'GET',
-            headers: {
-                'X-Api-Key' : key
-
-            },
-            mode: 'cors'
+            mode: 'cors',
         });
         let data = await response.json();
-        // console.log(data);
 
-        // $(".quote").text(data[0].quote);
-        // $(".author").text(data[0].author);
+        // console.log(data);
 
         
         let items = "";
@@ -48,7 +47,7 @@ $(function() {
                 "<figure class='text-center'>" + 
                     "<blockquote class='blockquote'>" + 
                         "<i class='fa-solid fa-quote-left'></i> " + 
-                        "<span class='quote'>" + data[i].quote + "</span>" + 
+                        "<span class='quote'>" + data[i].content + "</span>" + 
                         " <i class='fa-solid fa-quote-right'></i>" + 
                     "</blockquote>" + 
                     "<p class='blockquote-footer'>" + 
