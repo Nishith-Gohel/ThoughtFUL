@@ -247,6 +247,30 @@ div.input-group input#count{
     font-weight: 500;
 }
 
+.error-display{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+#frown-face {
+    color: #ff5454;
+    margin: 0px 4px;
+    position: relative;
+    top: 2px;
+}
+
+#error-prompt {
+    color: red;
+    font-family: "Kranky", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(1.5rem + 0.75vw);
+}
+
+#error-note {
+    font-size: calc(0.75rem + 0.25vw);
+}
+
 #contact{
     width: 75%;
     margin: 0 auto;

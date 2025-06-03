@@ -19,6 +19,23 @@ $(function() {
         $("#nav-icon").toggleClass("open");
     })
 
+    // Setting the copyright year dynamically
+    const date = new Date(), currentYear = date.getFullYear().toString();
+    
+    $("footer #year").text(currentYear);
+
+    // Error handler function to display custom error message when any error is encountered while fetching quotes
+    function handleFetchError() {
+        let errorDisplay = "<div class='error-display'>" + 
+                                "<h2>" +
+                                    "<i id='frown-face' class='fa-solid fa-face-frown'></i>" + 
+                                    "<span id='error-prompt'>OOPS! Something went wrong...</span>" + 
+                                "</h2>" + 
+                                "<p id='error-note'>Try fetching the quotes again</p>" +   
+                            "</div>";
+        $("#quotes-encloser").html("");
+        $("#quotes-encloser").append(errorDisplay);
+    }
 
     // Fetching the quotes through API on submit request of the form and displaying quotes on the carousel
     $("#fetch-quote").on("submit", async (e) => {
@@ -32,14 +49,29 @@ $(function() {
             url = `https://api.quotable.io/quotes/random?limit=${count}&tags=${category}`;
         // console.log(category, count);
 
-        let response = await fetch(url, {
-            method : 'GET',
-            mode: 'cors',
-        });
-        let data = await response.json();
+        let data = null;
+
+        // Error handling logic to check whether the response is correctly received 
+        try {
+            let response = await fetch(url, {
+                method : 'GET',
+                mode: 'cors',
+            });   
+            
+            if(!response.ok)
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            
+            data = await response.json();    
+
+        }
+        catch(error) {
+            // calling the error handler when there's some error fetching quotes from the API
+            handleFetchError();                
+            // Logging error to the console to know what the error is about
+            console.error("Failed fetching quotes with :", error);
+        }
 
         // console.log(data);
-
         
         let items = "";
         for(let i = 0; i < count; i++){
