@@ -24,6 +24,55 @@ $(function() {
     
     $("footer #year").text(currentYear);
 
+
+    // function to create the URL according to the category of quotes to be fetched
+    function createURL(category) {
+        // console.log(category);
+        let url;
+        switch(category) {
+            case "random" : 
+                url = "https://api.quotable.kurokeita.dev/api/quotes/random?limit=10";
+                break;
+            case "happiness" : 
+                url = "https://api.quotable.kurokeita.dev/api/quotes/random?limit=10&tags=Happiness";
+                break;
+            case "character" : 
+                url = "https://api.quotable.kurokeita.dev/api/quotes/random?limit=10&tags=Character";
+                break;
+            case "courage" :
+                url = "https://api.quotable.kurokeita.dev/api/quotes/random?limit=10&tags=Courage%7CMotivational";
+                break;
+            case "faith" :
+                url = "https://api.quotable.kurokeita.dev/api/quotes/random?limit=10&tags=Faith%7CPower%20Quotes%7CSadness";
+                break;
+            case "friendship" : 
+                url = "https://api.quotable.kurokeita.dev/api/quotes/random?limit=10&tags=Friendship";
+                break;
+            case "inspirational" :
+                url = "https://api.quotable.kurokeita.dev/api/quotes/random?limit=10&tags=Inspirational";
+                break;
+            case "life" : 
+                url = "https://api.quotable.kurokeita.dev/api/quotes/random?limit=10&tags=Life%7CGenerosity%7CGratitutde%7CPhilosohpy%7CVirtue%7CSelf%20Help";
+                break;
+            case "success" :
+                url = "https://api.quotable.kurokeita.dev/api/quotes/random?limit=10&tags=Success";
+                break;
+            default : 
+                url = "https://api.quotable.kurokeita.dev/api/quotes/random?limit=10";
+                break;
+        }
+        return url;
+    }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+
     // Error handler function to display custom error message when any error is encountered while fetching quotes
     function handleFetchError() {
         let errorDisplay = "<div class='error-display'>" + 
@@ -41,13 +90,10 @@ $(function() {
     $("#fetch-quote").on("submit", async (e) => {
         e.preventDefault();
         let category = $("#categories").val(), count = Number($("#count").val());
-        // let url = `https://api.api-ninjas.com/v1/quotes?category=${category}&limit=${count}`, key = secret.API_KEY;
-        let url;
-        if(category === "random")
-            url = `https://api.quotable.io/quotes/random?limit=${count}`;
-        else    
-            url = `https://api.quotable.io/quotes/random?limit=${count}&tags=${category}`;
         // console.log(category, count);
+
+        const url = createURL(category);
+        // console.log(url);
 
         let data = null;
 
@@ -72,6 +118,9 @@ $(function() {
         }
 
         // console.log(data);
+        shuffleArray(data.quotes);
+        const filteredQuotes = data.quotes.slice(0, count);
+        // console.log(filteredQuotes);
         
         let items = "";
         for(let i = 0; i < count; i++){
@@ -79,11 +128,11 @@ $(function() {
                 "<figure class='text-center'>" + 
                     "<blockquote class='blockquote'>" + 
                         "<i class='fa-solid fa-quote-left'></i> " + 
-                        "<span class='quote'>" + data[i].content + "</span>" + 
+                        "<span class='quote'>" + filteredQuotes[i].content + "</span>" + 
                         " <i class='fa-solid fa-quote-right'></i>" + 
                     "</blockquote>" + 
                     "<p class='blockquote-footer'>" + 
-                        "<cite title='author Source Title'>" + data[i].author +"</cite>" +
+                        "<cite title='author Source Title'>" + filteredQuotes[i].author.name +"</cite>" +
                     "</p>" + 
                 "</figure>" +
                 "</div>";
